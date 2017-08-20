@@ -1,0 +1,22 @@
+{
+  "name": "GGwedding",
+  "version": "1.0.0",
+  "description": "Giedrius & Ginte wedding",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gintez/wedding.git"
+  },
+  "author": "Gintez",
+  "license": "ISC",
+  "homepage": "https://github.com/Gintez/wedding#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.7",
+    "pug": "^2.0.0-rc.3"
+  }
+}
