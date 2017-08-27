@@ -1,0 +1,31 @@
+doctype html
+head
+  style
+    include admin.css
+body
+  h3 Attending guests: #{attending}
+  h3 Attending vegetarians: #{vegetarians}
+
+  h3 Detailed data:
+
+  table
+    tr
+      th URI
+      th Title
+      th Guests
+      th Vegetarians
+      th Song
+      th Submitted
+    each guest in guests
+      tr
+        td=guest.uri
+        td=guest.title
+        td=guest.guests
+        td=guest.vegetarians
+        td=guest.song
+        td=guest.submitted
+
+  h3 Submitted songs:
+  ul
+    each song in songs
+      li=song

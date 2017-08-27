@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+  <title>Gintes ir Giedriaus vestuves</title>
+  <link rel="stylesheet" href="/main.css">
+  <script src="/lib/axios.min.js"></script>
+  <script src="/main.js"></script>
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+</head>
+<body>
+  <div class='container'>
+    <div class='Header-wrapper'>
+      <div class='Header-cover'></div>
+        <div class='row'>
+          <div class='Header-content'>
+            <img src='/images/icon-line.png'/>
+            <div class='title Header-content-names'>Giedriaus ir Gintes</div>
+            <div class='Header-content-event'>Vestuvių šventė įvyks</div>
+            <div class='Header-content-date'>Gegužės 5 d., 15:30 val.</div>
+            <img class='Header-image' src='/images/hike.jpg' height="200" width="200" />
+          </div>
+        </div>
+    </div>
+    <div class='Event-wrapper'>
+      <div class="row">
+        <div class='col col-xs-12 col-md-6 col-md-6'>
+          <div class='Event-block'>
+            <img class='Event-block-img' src='/images/event-1.png' />
+            <div class='title Event-block-title'>Ceremonijos vieta</div>
+            <div class='Event-block-time'>15:30 val - 16:30 val</div>
+            <div class='Event-block-location'>Šv. Apaštalų Pilypo ir Jokūbo bažnyčia</div>
+            <div class='Event-block-map'>
+              <iframe width="250" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJM26gVg-U3UYRrRoYLTPWlZs&key=AIzaSyB_gYL9l_LDUv-N_U_Ap8AvqevGxPdWPk4" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class='col col-xs-12 col-md-6 col-md-6'>
+          <div class='Event-block'>
+            <img class='Event-block-img' src="/images/event-2.png" />
+            <div class='title Event-block-title'>Vestuviu vakarelis</div>
+            <div class='Event-block-time'>17:00 val - 13:00 val</div>
+            <div class='Event-block-location'><a href='http://villatop.lt/'> Villa Top </a>,Čekoniškės, Vilniaus Apskritis</div>
+            <div class='Event-block-map'>
+              <iframe width="250" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=N%2054%2044.205%2C%20E%2025%2004.338&key=AIzaSyB_gYL9l_LDUv-N_U_Ap8AvqevGxPdWPk4" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='Form-wrapper'>
+      <div class='row'>
+        <div class='Form-background'>
+          <div class='Form'>
+            <div class='title Form-names'>#{guest.title},</div>
+            if guest.couple
+              <div class='Form-title'>kviečiame Jus į mūsų šventę</div>
+            else
+              <div class='Form-title'>kviečiame Tave į mūsų šventę</div>
+            if guest.submitted
+              <div>Atsakymas sėkmingai išsaugotas. Ačiū!</div>
+            else
+              <form action="/attendance" method="post" id="attendance-form">
+                <input type="hidden" id="guestId" name="guestId" value="#{guest._id}">
+                if guest.couple
+                  <div><label>Svečių skaičius</label></div>
+                else
+                  <div><label>Ar galėsite dalyvauti?</label></div>
+                <select class="form-control" name="guests" id="guests">
+                  if guest.couple
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                    <option value="0">Dalyvauti negalėsime :(</option>
+                  else
+                    <option value="1">Taip</option>
+                    <option value="0">Dalyvauti negalėsiu :(</option>
+                </select>
+                <div>
+                  <label>Ar norėsite valgyti vegetariškai?</label>
+                </div>
+                <select class="form-control" name="vegetarians" id="vegetarians">
+                  if guest.couple
+                    <option value="0">Ne</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  else
+                    <option value="0">Ne</option>
+                    <option value="1">Taip</option>
+                </select>
+                <div>
+                  <label>Jūsų pageidaujama daina?</label>
+                </div>
+                <input class="form-control" name="song" type='text' placeholder="Įrašykite dainos pavadinimą" id="song" />
+                <div>
+                  <button type="submit" onclick="postAttendance(event)">Pateikti</button>
+                </div>
+              </form>
+            <div class='Form-disclaimer'>Jei negalėsite dalyvauti praneškite kuo greičiau. <br/> Vėliausiai 3 d. iki šventės.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
