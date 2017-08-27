@@ -2,7 +2,7 @@ var seeder = require('mongoose-seed');
 
 seeder.connect('mongodb://localhost:27017/wedding', function() {
 
-    seeder.loadModels(['../src/guest.js']);
+    seeder.loadModels(['src/guest.js']);
 
     seeder.clearModels(['Guest'], function() {
         seeder.populateModels(data, function() {
@@ -45,7 +45,7 @@ var data = [
             },
             {
                 uri: 'juste-ir-david',
-                title: 'Justė ir David',
+                title: 'Juste ir David',
                 couple: true,
                 guests: 0,
                 vegetarians: 0,
@@ -153,7 +153,7 @@ var data = [
             },
             {
                 uri: 'ugne-ir-mindaugas',
-                title: 'Ugnė ir Mindaugai',
+                title: 'Ugne ir Mindaugai',
                 couple: true,
                 guests: 0,
                 vegetarians: 0,
@@ -162,7 +162,7 @@ var data = [
             },
             {
                 uri: 'aiste-ir-povilas',
-                title: 'Aistė ir Povilai',
+                title: 'Aiste ir Povilai',
                 couple: true,
                 guests: 0,
                 vegetarians: 0,
@@ -180,7 +180,7 @@ var data = [
             },
             {
                 uri: 'audre-ir-sergio',
-                title: 'Audrė ir Sergio',
+                title: 'Audre ir Sergio',
                 couple: true,
                 guests: 0,
                 vegetarians: 0,
@@ -209,6 +209,24 @@ var data = [
                 uri: 'ieva',
                 title: 'Ieva',
                 couple: false,
+                guests: 0,
+                vegetarians: 0,
+                song: '',
+                submitted: false
+            },
+            {
+                uri: 'evaldas',
+                title: 'Evaldas',
+                couple: false,
+                guests: 0,
+                vegetarians: 0,
+                song: '',
+                submitted: false
+            },
+            {
+                uri: 'gedas-ir-giedre',
+                title: 'Gedai ir Giedre',
+                couple: true,
                 guests: 0,
                 vegetarians: 0,
                 song: '',

@@ -6,15 +6,13 @@ function postAttendance(e) {
     var attendanceForm = document.getElementById("attendance-form");
 
     axios.post('/attendance', {
-        guestUri: document.getElementById("guestUri").value,
+        id: document.getElementById("guestId").value,
         guests: document.getElementById("guests").value,
         vegetarians: document.getElementById("vegetarians").value,
         song: document.getElementById("song").value
-    }).then(function (response) {
+    }).then(function () {
         attendanceForm.innerHTML = "<div>Atsakymas sėkmingai išsaugotas. Ačiū!</div>";
-        console.log(response);
     }).catch(function (error) {
         attendanceForm.innerHTML = "<div>Įvyko klaida. Mėginkite dar kartą arba kreipkitės į mus tiesiogiai.</div>";
-        console.log(error);
     });
 }
