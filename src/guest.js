@@ -8,7 +8,7 @@ const GuestSchema = new Schema({
     guests: Number,
     vegetarians: Number,
     song: String,
-    answered: Boolean
+    submitted: Boolean
 });
 
 module.exports = mongoose.model('Guest', GuestSchema);

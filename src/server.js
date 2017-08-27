@@ -2,11 +2,11 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 
-//mongoose.connect('mongodb://localhost:27017/todoapp');
+mongoose.connect('mongodb://localhost:27017/wedding');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
