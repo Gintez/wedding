@@ -235,7 +235,7 @@ var data = [
             {
                 uri: 'onute',
                 title: 'Onute',
-                couple: true,
+                couple: false,
                 guests: 0,
                 vegetarians: 0,
                 song: '',
@@ -244,7 +244,7 @@ var data = [
             {
                 uri: 'jadvyga',
                 title: 'Jadvyga',
-                couple: true,
+                couple: false,
                 guests: 0,
                 vegetarians: 0,
                 song: '',
