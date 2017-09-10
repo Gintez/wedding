@@ -231,6 +231,24 @@ var data = [
                 vegetarians: 0,
                 song: '',
                 submitted: false
+            },
+            {
+                uri: 'onute',
+                title: 'Onute',
+                couple: true,
+                guests: 0,
+                vegetarians: 0,
+                song: '',
+                submitted: false
+            },
+            {
+                uri: 'jadvyga',
+                title: 'Jadvyga',
+                couple: true,
+                guests: 0,
+                vegetarians: 0,
+                song: '',
+                submitted: false
             }
         ]
     }
